@@ -7,7 +7,7 @@
 
 import HealthKit
 
-struct StepsService {
+struct Service {
     let healthStore: HKHealthStore
 
     init(healthStore: HKHealthStore) {
@@ -17,11 +17,7 @@ struct StepsService {
     // Suma pașilor din ultimele 24 de ore.
     func fetchStepsLast24h(completion: @escaping (Double) -> Void) {
         // 1) Tipul de date
-//        guard let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
-//            completion(0)
-//            return
-//        }
-        let stepType =  HKQuantityType.quantityType(forIdentifier: .stepCount)!
+        let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
 
         // 2) Interval: acum și cu 24h în urmă
         let now = Date()
@@ -46,7 +42,6 @@ struct StepsService {
             }
 
             // 7) Convertim la HKQuantitySample și însumăm valorile
-          
             let quantitySamples = (samples as? [HKQuantitySample]) ?? []
             let unit = HKUnit.count()
 
@@ -55,8 +50,6 @@ struct StepsService {
                 let value = sample.quantity.doubleValue(for: unit)
                 total += value
             }
-
-            // la final, folosești `total` (ex: completion(total))
 
             // 8) Returnăm rezultatul
             completion(total)

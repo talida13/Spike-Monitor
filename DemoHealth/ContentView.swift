@@ -20,8 +20,7 @@ struct ContentView: View {
                         if success {
                             authorizationStatusText = "OK"
 
-
-                            let stepsService = StepsService(healthStore: HKHealthStore())
+                            let stepsService = Service(healthStore: HKHealthStore())
                             stepsService.fetchStepsLast24h { total in
                                 DispatchQueue.main.async {
                                     stepsText = "Pași (24h): \(Int(total))"
