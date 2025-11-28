@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 84A9AAA72ED76B5600E378F7 /* Build configuration list for PBXProject "SpikeMonitor" */;
+			buildConfigurationList = 84A9AAA72ED76B5600E378F7 /* Build configuration list for PBXProject "SpikeMonitorApp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -543,7 +543,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84A9AAA72ED76B5600E378F7 /* Build configuration list for PBXProject "SpikeMonitor" */ = {
+		84A9AAA72ED76B5600E378F7 /* Build configuration list for PBXProject "SpikeMonitorApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84A9AACD2ED76B5700E378F7 /* Debug */,
